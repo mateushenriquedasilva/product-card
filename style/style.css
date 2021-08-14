@@ -1,0 +1,108 @@
+/*OBS = Pesquisar*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*OBS*/
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex; /*OBS*/
+    justify-content: center; /*OBS*/
+    align-items: center; /*OBS*/
+    min-height: 100vh; 
+    background-color: #232323;
+    overflow: hidden; /*OBS*/
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+
+section::before {
+    content: "";
+    position: fixed; /*OBS*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ef3b36;
+    clip-path: circle(65% at 100% -20%); /*OBS*/
+}
+
+section::after {
+    content: "";
+    position: fixed; /*OBS*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #47aafa;
+    clip-path: circle(65% at 0% 100%); /*OBS*/
+}
+
+article {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+aside {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+}
+
+figure {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.5s ease-in-out; 
+}
+
+aside:hover figure {
+    transform: translateY(-100px);
+}
+
+img {
+    max-width: 100%;
+    margin: 0 0 20px;
+    transition: 0.5s ease-in-out; 
+}
+
+aside:hover figure img {
+    transform: translate(-20px, -40px) rotate(-25deg) scale(1.4);
+}
+
+img[src*="nike-running-green"] + h2 {
+    color: white;
+    font-weight: 600;
+}
+
+aside .content {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+
+aside .content .size {
+    
+}
