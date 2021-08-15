@@ -61,7 +61,6 @@ aside {
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(15px);
-    cursor: pointer;
 }
 
 figure {
@@ -95,14 +94,91 @@ img[src*="nike-running-green"] + h2 {
 
 aside .content {
     position: absolute;
-    bottom: 20px;
+    bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition: 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
 }
 
-aside .content .size {
-    
+aside:hover .content {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+aside .content .size,
+aside .content .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+figure + div.content h3 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+} 
+
+div[class="size"] h3 ~ span {
+    width:  26px;
+    height: 26px;
+    text-align: center;
+    line-height: 24px;
+    display: inline-block;
+    color: #111;
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 500;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+div[class="size"] h3 ~ span:hover {
+    background-color: #9bdc28;
+}
+
+div[class="color"] h3 ~ span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+div[class="color"] span:nth-child(2) {
+    background-color: #9bdc28;
+}
+
+div[class="color"] span:nth-child(3) {
+    background-color: #03a9f4;
+}
+
+div[class="color"] span:nth-child(4) {
+    background-color: #e91e63;
+}
+
+.content > a {
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fff;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;  
 }
